@@ -17,3 +17,5 @@ class Game {
     console.log("hehe");
   }
 }
+
+const tamagotchi = new Game(nick, type)
