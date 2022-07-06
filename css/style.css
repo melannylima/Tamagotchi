@@ -7,12 +7,15 @@ body {
   text-align: center;
 }
 
-h1 {
-  display: block;
+#init {
+  margin: 15;
 
 }
 
-.init {
-  display: block;
-  position: fixed;
+.eggs {
+  display: flex;
+  flex-direction: row;
+  height: 15vh;
+  justify-content: space-evenly;
+  margin: 100px 20px 0 20px;
 }
