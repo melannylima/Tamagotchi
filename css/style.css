@@ -1,10 +1,12 @@
 body {
+  background-image:url(../img/day.jpg);
+  background-size: 100vw 100vh;
   background-color: blue;
   margin: 0;
   padding: 0;
 }
 
-img {
+h1 {
   display: block;
-  width: 100vw
+  text-align: center;
 }
