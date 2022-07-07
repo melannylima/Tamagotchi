@@ -20,3 +20,8 @@ body {
   flex-direction: row;
   justify-content: space-around;
 }
+
+#dragon {
+  display: flex;
+  justify-content: center;
+}

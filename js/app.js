@@ -38,14 +38,39 @@ function selector() {
   eggs.appendChild(egg3)
   bod.appendChild(eggs)
 
-  document.getElementById("egg1").addEventListener("click", hatch)
-  document.getElementById("egg2").addEventListener("click", hatch)
-  document.getElementById("egg3").addEventListener("click", hatch)
+  document.getElementById("egg1").addEventListener("click", hatch1)
+  document.getElementById("egg2").addEventListener("click", hatch2)
+  document.getElementById("egg3").addEventListener("click", hatch3)
 }
 
-function hatch() {
+function hatch1() {
+  const bod = document.getElementById("interactive")
   const eggs = document.getElementById("egg-buttons")
   eggs.remove()
+  const tama = document.createElement("DIV")
+  tama.setAttribute("id", "dragon")
+  tama.innerHTML = '<img src="img/dragons.png" />';
+  bod.appendChild(tama)
+}
+
+function hatch2() {
+  const bod = document.getElementById("interactive")
+  const eggs = document.getElementById("egg-buttons")
+  eggs.remove()
+  const tama = document.createElement("DIV")
+  tama.setAttribute("id", "dragon")
+  tama.innerHTML = '<img src="img/dragons2.png" />';
+  bod.appendChild(tama)
+}
+
+function hatch3() {
+  const bod = document.getElementById("interactive")
+  const eggs = document.getElementById("egg-buttons")
+  eggs.remove()
+  const tama = document.createElement("DIV")
+  tama.setAttribute("id", "dragon")
+  tama.innerHTML = '<img src="img/dragons3.png" />';
+  bod.appendChild(tama)
 }
 
 
