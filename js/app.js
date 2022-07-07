@@ -37,6 +37,15 @@ function selector() {
   eggs.appendChild(egg2)
   eggs.appendChild(egg3)
   bod.appendChild(eggs)
+
+  document.getElementById("egg1").addEventListener("click", hatch)
+  document.getElementById("egg2").addEventListener("click", hatch)
+  document.getElementById("egg3").addEventListener("click", hatch)
+}
+
+function hatch() {
+  const eggs = document.getElementById("egg-buttons")
+  eggs.remove()
 }
 
 
