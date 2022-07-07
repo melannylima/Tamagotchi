@@ -8,14 +8,15 @@ body {
 }
 
 #init {
-  margin: 15;
+  margin: 50px 10px 50px 10px;
 
 }
 
-.eggs {
+#eggs {
+  /* background: url(../img/egg1.png) no-repeat;
+  background: url(../img/egg2.png) no-repeat;
+  background: url(../img/egg3.png) no-repeat; */
   display: flex;
   flex-direction: row;
-  height: 15vh;
-  justify-content: space-evenly;
-  margin: 100px 20px 0 20px;
+  justify-content: space-around;
 }
