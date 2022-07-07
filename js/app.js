@@ -36,6 +36,7 @@ function selector() {
   eggs.appendChild(egg1)
   eggs.appendChild(egg2)
   eggs.appendChild(egg3)
+  alert("Choose an egg to hatch")
   bod.appendChild(eggs)
 
   document.getElementById("egg1").addEventListener("click", hatch1)
@@ -51,6 +52,13 @@ function hatch1() {
   tama.setAttribute("id", "dragon")
   tama.innerHTML = '<img src="img/dragons.png" />';
   bod.appendChild(tama)
+  const start = document.getElementById("init")
+  start.remove()
+  const head = document.getElementById("head")
+  let name = prompt("Name your Tamagotchi!", "name")
+  const newDiv = document.createElement("DIV")
+  newDiv.innerHTML = name
+  head.appendChild(newDiv)
 }
 
 function hatch2() {
@@ -61,6 +69,13 @@ function hatch2() {
   tama.setAttribute("id", "dragon")
   tama.innerHTML = '<img src="img/dragons2.png" />';
   bod.appendChild(tama)
+  const start = document.getElementById("init")
+  start.remove()
+  const head = document.getElementById("head")
+  let name = prompt("Name your Tamagotchi!", "name")
+  const newDiv = document.createElement("DIV")
+  newDiv.innerHTML = name
+  head.appendChild(newDiv)
 }
 
 function hatch3() {
@@ -71,6 +86,13 @@ function hatch3() {
   tama.setAttribute("id", "dragon")
   tama.innerHTML = '<img src="img/dragons3.png" />';
   bod.appendChild(tama)
+  const start = document.getElementById("init")
+  start.remove()
+  const head = document.getElementById("head")
+  let name = prompt("Name your Tamagotchi!", "name")
+  const newDiv = document.createElement("DIV")
+  newDiv.innerHTML = name
+  head.appendChild(newDiv)
 }
 
 
