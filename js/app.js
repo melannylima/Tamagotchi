@@ -1,9 +1,8 @@
 console.log("Tamagotchi");
 
 class Game {
-  constructor(name, breed) {
+  constructor(name) {
     this.name = name;
-    this.breed = breed;
 
   }
 
@@ -18,7 +17,14 @@ class Game {
   }
 }
 
-// const tamagotchi = new Game(nick, type)
+let name = prompt("Name your Tamagotchi!", "name")
+let tamagotchi = new Game(name)
+const head = document.getElementById("head")
+const newDiv = document.createElement("DIV")
+newDiv.innerHTML = name
+head.appendChild(newDiv)
+
+
 
 function selector() {
   const bod = document.getElementById("interactive")
@@ -54,11 +60,6 @@ function hatch1() {
   bod.appendChild(tama)
   const start = document.getElementById("init")
   start.remove()
-  const head = document.getElementById("head")
-  let name = prompt("Name your Tamagotchi!", "name")
-  const newDiv = document.createElement("DIV")
-  newDiv.innerHTML = name
-  head.appendChild(newDiv)
 }
 
 function hatch2() {
@@ -71,11 +72,6 @@ function hatch2() {
   bod.appendChild(tama)
   const start = document.getElementById("init")
   start.remove()
-  const head = document.getElementById("head")
-  let name = prompt("Name your Tamagotchi!", "name")
-  const newDiv = document.createElement("DIV")
-  newDiv.innerHTML = name
-  head.appendChild(newDiv)
 }
 
 function hatch3() {
@@ -88,11 +84,6 @@ function hatch3() {
   bod.appendChild(tama)
   const start = document.getElementById("init")
   start.remove()
-  const head = document.getElementById("head")
-  let name = prompt("Name your Tamagotchi!", "name")
-  const newDiv = document.createElement("DIV")
-  newDiv.innerHTML = name
-  head.appendChild(newDiv)
 }
 
 
@@ -103,3 +94,6 @@ function hatch3() {
 
 
 document.getElementById("init").addEventListener("click", selector)
+document.getElementById("feed").addEventListener("click", tamagotchi.onFeed)
+document.getElementById("play").addEventListener("click", tamagotchi.onPlay)
+document.getElementById("sleep").addEventListener("click", tamagotchi.onSleep)
