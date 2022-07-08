@@ -1,10 +1,18 @@
 body {
-  background-image:url(../img/day.jpg);
+  background-image:url(../img/field.png);
   background-size: 100vw 100vh;
-  background-color: blue;
+  background-color: #7FEAFF;
   margin: 0;
   padding: 0;
   text-align: center;
+}
+
+#head {
+  margin: 150px 0 100px 0;
+}
+
+#tam_name {
+  margin: 20px 0 0 0;
 }
 
 #init {

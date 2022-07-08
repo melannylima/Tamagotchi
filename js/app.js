@@ -23,6 +23,7 @@ function start() {
   let tamagotchi = new Game(name)
   const head = document.getElementById("head")
   const newDiv = document.createElement("DIV")
+  newDiv.setAttribute("id", "tam_name")
   newDiv.innerHTML = name
   head.appendChild(newDiv)
   const start = document.getElementById("init")
@@ -70,7 +71,7 @@ function hatch1() {
   tama.setAttribute("id", "dragon")
   tama.innerHTML = '<img src="img/dragons.png" />';
   bod.appendChild(tama)
-  console.log(tamagotchi);
+  
 }
 
 function hatch2() {
