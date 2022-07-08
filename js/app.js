@@ -17,16 +17,27 @@ class Game {
   }
 }
 
-let name = prompt("Name your Tamagotchi!", "name")
-let tamagotchi = new Game(name)
-const head = document.getElementById("head")
-const newDiv = document.createElement("DIV")
-newDiv.innerHTML = name
-head.appendChild(newDiv)
 
+function start() {
+  let name = prompt("Name your Tamagotchi!", "name")
+  let tamagotchi = new Game(name)
+  const head = document.getElementById("head")
+  const newDiv = document.createElement("DIV")
+  newDiv.innerHTML = name
+  head.appendChild(newDiv)
+  const start = document.getElementById("init")
+  start.remove()
+  // return tamagotchi
+
+  document.getElementById("feed").addEventListener("click", tamagotchi.onFeed)
+  document.getElementById("play").addEventListener("click", tamagotchi.onPlay)
+  document.getElementById("sleep").addEventListener("click", tamagotchi.onSleep)
+}
 
 
 function selector() {
+  start()
+
   const bod = document.getElementById("interactive")
   const eggs = document.createElement("DIV")
   eggs.setAttribute("id", "egg-buttons")
@@ -48,6 +59,7 @@ function selector() {
   document.getElementById("egg1").addEventListener("click", hatch1)
   document.getElementById("egg2").addEventListener("click", hatch2)
   document.getElementById("egg3").addEventListener("click", hatch3)
+
 }
 
 function hatch1() {
@@ -58,8 +70,7 @@ function hatch1() {
   tama.setAttribute("id", "dragon")
   tama.innerHTML = '<img src="img/dragons.png" />';
   bod.appendChild(tama)
-  const start = document.getElementById("init")
-  start.remove()
+  console.log(tamagotchi);
 }
 
 function hatch2() {
@@ -70,8 +81,7 @@ function hatch2() {
   tama.setAttribute("id", "dragon")
   tama.innerHTML = '<img src="img/dragons2.png" />';
   bod.appendChild(tama)
-  const start = document.getElementById("init")
-  start.remove()
+
 }
 
 function hatch3() {
@@ -82,8 +92,7 @@ function hatch3() {
   tama.setAttribute("id", "dragon")
   tama.innerHTML = '<img src="img/dragons3.png" />';
   bod.appendChild(tama)
-  const start = document.getElementById("init")
-  start.remove()
+
 }
 
 
@@ -94,6 +103,3 @@ function hatch3() {
 
 
 document.getElementById("init").addEventListener("click", selector)
-document.getElementById("feed").addEventListener("click", tamagotchi.onFeed)
-document.getElementById("play").addEventListener("click", tamagotchi.onPlay)
-document.getElementById("sleep").addEventListener("click", tamagotchi.onSleep)
