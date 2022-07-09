@@ -39,9 +39,21 @@ li {
   justify-content: space-around;
 }
 
+@keyframes dance {
+  0% {left: 0px}
+  25% {left: 200px}
+  50% {left:0px}
+  75% {left: -200px}
+  100% {left: 0px}
+}
+
 #dragon {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
+  position: relative;
+  animation-name: dance;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
 }
 
 #interactive {

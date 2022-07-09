@@ -206,6 +206,7 @@ function intervals() {
     console.log(tamGame.age); }, 4000)
   setInterval(() => {tamGame.toHeaven() }, 500)
   setInterval(() => {tamGame.aging() }, 3900)
+  // setInterval(() => {const dragon = document.getElementById("dragon"); dragon.classList.toggle("move")}, 4000)
 }
 
 
