@@ -2,15 +2,15 @@ console.log("Tamagotchi");
 
 const tamGame = {
 
-  name : "",
-  age : 0,
-  hunger : 1,
-  tired: 1,
-  bored: 1,
+  name: "",
+  age: 0,
+  hunger: 0,
+  tired: 0,
+  bored: 0,
 
   onFeed() {
     console.log("num num");
-    console.log(tamGame.hunger);
+    // console.log(tamGame.hunger);
     document.getElementById("growl").innerHTML = tamGame.hunger -= 1;
   },
   onSleep() {
@@ -22,6 +22,12 @@ const tamGame = {
   onPlay() {
     console.log("hehe");
     document.getElementById("whine").innerHTML = tamGame.bored -= 1;
+  },
+  toHeaven() {
+    if (tamGame.hunger >= 10 || tamGame.tired >= 10 || tamGame.bored >= 10) {
+      heaven()
+      alert(`${name} has gone to Heaven!`)
+    }
   }
 }
 
@@ -75,6 +81,8 @@ function start() {
   setInterval(() => {
     document.getElementById("ooh").innerHTML = tamGame.age += 1;
     console.log(tamGame.age); }, 4500)
+  setInterval(() => {tamGame.toHeaven() }, 500)
+
 }
 
 
@@ -139,6 +147,14 @@ function hatch3() {
 }
 
 
+function heaven() {
+  const tama = document.getElementById("dragon");
+  const bod = document.getElementById("interactive");
+  bod.innerHTML = '<img src="img/rip.png" />';
+  tama.remove();
+  console.log("Game Over");
+
+}
 
 
 

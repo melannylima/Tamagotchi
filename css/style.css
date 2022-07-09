@@ -43,3 +43,7 @@ li {
   display: flex;
   justify-content: center;
 }
+
+#interactive {
+  height: 25vh;
+}
