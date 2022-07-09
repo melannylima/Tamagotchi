@@ -7,6 +7,7 @@ const tamGame = {
   hunger: 0,
   tired: 0,
   bored: 0,
+  type: 0,
 
   onFeed() {
     console.log("num num");
@@ -68,21 +69,6 @@ function start() {
   age.innerHTML = tamGame.age
   stat4.appendChild(age)
 
-
-  setInterval(() => {
-    document.getElementById("growl").innerHTML = tamGame.hunger += 1;
-    console.log(tamGame.hunger); }, 2500)
-  setInterval(() => {
-    document.getElementById("yawn").innerHTML = tamGame.tired += 1;
-    console.log(tamGame.tired); }, 2500)
-  setInterval(() => {
-    document.getElementById("whine").innerHTML = tamGame.bored += 1;
-    console.log(tamGame.bored); }, 2500)
-  setInterval(() => {
-    document.getElementById("ooh").innerHTML = tamGame.age += 1;
-    console.log(tamGame.age); }, 4500)
-  setInterval(() => {tamGame.toHeaven() }, 500)
-
 }
 
 
@@ -121,7 +107,8 @@ function hatch1() {
   tama.setAttribute("id", "dragon")
   tama.innerHTML = '<img src="img/dragons.png" />';
   bod.appendChild(tama)
-
+  tamGame.type = 1;
+  intervals()
 }
 
 function hatch2() {
@@ -132,7 +119,8 @@ function hatch2() {
   tama.setAttribute("id", "dragon")
   tama.innerHTML = '<img src="img/dragons2.png" />';
   bod.appendChild(tama)
-
+  tamGame.type = 2;
+  intervals()
 }
 
 function hatch3() {
@@ -143,7 +131,8 @@ function hatch3() {
   tama.setAttribute("id", "dragon")
   tama.innerHTML = '<img src="img/dragons3.png" />';
   bod.appendChild(tama)
-
+  tamGame.type = 3;
+  intervals()
 }
 
 
@@ -157,7 +146,21 @@ function heaven() {
 }
 
 
-
+function intervals() {
+  setInterval(() => {
+    document.getElementById("growl").innerHTML = tamGame.hunger += 1;
+    console.log(tamGame.hunger); }, 2500)
+  setInterval(() => {
+    document.getElementById("yawn").innerHTML = tamGame.tired += 1;
+    console.log(tamGame.tired); }, 2500)
+  setInterval(() => {
+    document.getElementById("whine").innerHTML = tamGame.bored += 1;
+    console.log(tamGame.bored); }, 2500)
+  setInterval(() => {
+    document.getElementById("ooh").innerHTML = tamGame.age += 1;
+    console.log(tamGame.age); }, 4500)
+  setInterval(() => {tamGame.toHeaven() }, 500)
+}
 
 
 
