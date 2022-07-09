@@ -1,17 +1,18 @@
 console.log("Tamagotchi");
 
-class Game {
-  constructor(name) {
-    this.name = name;
-    this.hunger = 0
-  }
+const tamGame = {
+
+  name : "",
+  hunger : 1,
 
   onFeed() {
     console.log("num num");
-  }
+    tamGame.hunger = tamGame.hunger - 1;
+    console.log(tamGame.hunger);
+  },
   onSleep() {
     console.log("Zzz...");
-  }
+  },
   onPlay() {
     console.log("hehe");
   }
@@ -19,8 +20,8 @@ class Game {
 
 
 function start() {
-  let name = prompt("Name your Tamagotchi!", "name")
-  let tamagotchi = new Game(name)
+  name = prompt("Name your Tamagotchi!", "name")
+  tamGame.name = name
   const head = document.getElementById("head")
   const newDiv = document.createElement("DIV")
   newDiv.setAttribute("id", "tam_name")
@@ -30,13 +31,18 @@ function start() {
   start.remove()
   // return tamagotchi
   const stats = document.getElementById("stats")
-  const hunger = document.createElement("H2")
-  hunger.innerHTML = tamagotchi.hunger
-  stats.appendChild(hunger)
+  let hungry = document.createElement("H2")
+  hungry.innerHTML = tamGame.hunger
+  stats.appendChild(hungry)
 
-  document.getElementById("feed").addEventListener("click", tamagotchi.onFeed)
-  document.getElementById("play").addEventListener("click", tamagotchi.onPlay)
-  document.getElementById("sleep").addEventListener("click", tamagotchi.onSleep)
+
+
+
+  document.getElementById("feed").addEventListener("click", tamGame.onFeed)
+  document.getElementById("play").addEventListener("click", tamGame.onPlay)
+  document.getElementById("sleep").addEventListener("click", tamGame.onSleep)
+
+  setInterval( function() { hungry.innerhtml = tamGame.hunger += 1; console.log(tamGame.hunger); }, 2000)
 }
 
 
