@@ -40,6 +40,7 @@ function start() {
   const stat1 = document.getElementById("hunger")
   const stat2 = document.getElementById("tired")
   const stat3 = document.getElementById("bored")
+  const stat4 = document.getElementById("age")
 
   let hungry = document.createElement("H2")
   hungry.setAttribute("id", "growl")
@@ -56,6 +57,11 @@ function start() {
   bored.innerHTML = tamGame.bored
   stat3.appendChild(bored)
 
+  let age = document.createElement("H2")
+  age.setAttribute("id", "ooh")
+  age.innerHTML = tamGame.age
+  stat4.appendChild(age)
+
 
   setInterval(() => {
     document.getElementById("growl").innerHTML = tamGame.hunger += 1;
@@ -66,6 +72,9 @@ function start() {
   setInterval(() => {
     document.getElementById("whine").innerHTML = tamGame.bored += 1;
     console.log(tamGame.bored); }, 2500)
+  setInterval(() => {
+    document.getElementById("ooh").innerHTML = tamGame.age += 1;
+    console.log(tamGame.age); }, 4500)
 }
 
 
