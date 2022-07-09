@@ -3,7 +3,7 @@ console.log("Tamagotchi");
 class Game {
   constructor(name) {
     this.name = name;
-
+    this.hunger = 0
   }
 
   onFeed() {
@@ -29,6 +29,10 @@ function start() {
   const start = document.getElementById("init")
   start.remove()
   // return tamagotchi
+  const stats = document.getElementById("stats")
+  const hunger = document.createElement("H2")
+  hunger.innerHTML = tamagotchi.hunger
+  stats.appendChild(hunger)
 
   document.getElementById("feed").addEventListener("click", tamagotchi.onFeed)
   document.getElementById("play").addEventListener("click", tamagotchi.onPlay)
@@ -71,7 +75,7 @@ function hatch1() {
   tama.setAttribute("id", "dragon")
   tama.innerHTML = '<img src="img/dragons.png" />';
   bod.appendChild(tama)
-  
+
 }
 
 function hatch2() {
