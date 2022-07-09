@@ -21,6 +21,7 @@ const tamGame = {
   },
   onPlay() {
     console.log("hehe");
+    document.getElementById("whine").innerHTML = tamGame.bored -= 1;
   }
 }
 
@@ -38,6 +39,7 @@ function start() {
 
   const stat1 = document.getElementById("hunger")
   const stat2 = document.getElementById("tired")
+  const stat3 = document.getElementById("bored")
 
   let hungry = document.createElement("H2")
   hungry.setAttribute("id", "growl")
@@ -49,7 +51,10 @@ function start() {
   tired.innerHTML = tamGame.tired
   stat2.appendChild(tired)
 
-
+  let bored = document.createElement("H2")
+  bored.setAttribute("id", "whine")
+  bored.innerHTML = tamGame.bored
+  stat3.appendChild(bored)
 
 
   setInterval(() => {
@@ -58,6 +63,9 @@ function start() {
   setInterval(() => {
     document.getElementById("yawn").innerHTML = tamGame.tired += 1;
     console.log(tamGame.tired); }, 2500)
+  setInterval(() => {
+    document.getElementById("whine").innerHTML = tamGame.bored += 1;
+    console.log(tamGame.bored); }, 2500)
 }
 
 
