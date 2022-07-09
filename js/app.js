@@ -29,6 +29,27 @@ const tamGame = {
       heaven()
       alert(`${name} has gone to Heaven!`)
     }
+  },
+  aging() {
+    if (tamGame.age == 5 && tamGame.type == 1) {
+      age11()
+      alert(`${name} is evolving!`)
+    } else if (tamGame.age == 12 && tamGame.type == 1) {
+      age12()
+      alert(`${name} is an Adult!`)
+    } else if (tamGame.age == 5 && tamGame.type == 2) {
+      age21()
+      alert(`${name} is evolving!`)
+    } else if (tamGame.age == 12 && tamGame.type == 2) {
+      age22()
+      alert(`${name} is an Adult!`)
+    } else if (tamGame.age == 5 && tamGame.type == 3) {
+      age31()
+      alert(`${name} is evolving!`)
+    } else if (tamGame.age == 12 && tamGame.type == 3) {
+      age32()
+      alert(`${name} is an Adult!`)
+    }
   }
 }
 
@@ -142,7 +163,31 @@ function heaven() {
   bod.innerHTML = '<img src="img/rip.png" />';
   tama.remove();
   console.log("Game Over");
+}
 
+function age11() {
+  const tama = document.getElementById("dragon");
+  tama.innerHTML = '<img src="img/dragons_evo_1.png" />';
+}
+function age12() {
+  const tama = document.getElementById("dragon");
+  tama.innerHTML = '<img src="img/dragons_evo_2.png" />';
+}
+function age21() {
+  const tama = document.getElementById("dragon");
+  tama.innerHTML = '<img src="img/dragons2_evo_1.png" />';
+}
+function age22() {
+  const tama = document.getElementById("dragon");
+  tama.innerHTML = '<img src="img/dragons2_evo_2.png" />';
+}
+function age31() {
+  const tama = document.getElementById("dragon");
+  tama.innerHTML = '<img src="img/dragons3_evo_1.png" />';
+}
+function age32() {
+  const tama = document.getElementById("dragon");
+  tama.innerHTML = '<img src="img/dragons3_evo_2.png" />';
 }
 
 
@@ -158,8 +203,9 @@ function intervals() {
     console.log(tamGame.bored); }, 2500)
   setInterval(() => {
     document.getElementById("ooh").innerHTML = tamGame.age += 1;
-    console.log(tamGame.age); }, 4500)
+    console.log(tamGame.age); }, 4000)
   setInterval(() => {tamGame.toHeaven() }, 500)
+  setInterval(() => {tamGame.aging() }, 3900)
 }
 
 
