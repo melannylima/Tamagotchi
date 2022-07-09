@@ -7,6 +7,15 @@ body {
   text-align: center;
 }
 
+.night {
+  background-image:url(../img/field.png);
+  background-size: 100vw 100vh;
+  background-color: #0446C9;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
 #head {
   margin: 150px 0 100px 0;
 }

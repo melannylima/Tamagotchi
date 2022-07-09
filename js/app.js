@@ -3,7 +3,10 @@ console.log("Tamagotchi");
 const tamGame = {
 
   name : "",
+  age : 0,
   hunger : 1,
+  tired: 1,
+  bored: 1,
 
   onFeed() {
     console.log("num num");
@@ -12,6 +15,9 @@ const tamGame = {
   },
   onSleep() {
     console.log("Zzz...");
+    document.getElementById("yawn").innerHTML = tamGame.tired -= 1;
+    const sky = document.getElementById("main")
+  sky.classList.toggle("night");
   },
   onPlay() {
     console.log("hehe");
@@ -29,19 +35,29 @@ function start() {
   head.appendChild(newDiv)
   const start = document.getElementById("init")
   start.remove()
+
   const stat1 = document.getElementById("hunger")
+  const stat2 = document.getElementById("tired")
+
   let hungry = document.createElement("H2")
   hungry.setAttribute("id", "growl")
   hungry.innerHTML = tamGame.hunger
   stat1.appendChild(hungry)
 
+  let tired = document.createElement("H2")
+  tired.setAttribute("id", "yawn")
+  tired.innerHTML = tamGame.tired
+  stat2.appendChild(tired)
 
 
 
 
   setInterval(() => {
     document.getElementById("growl").innerHTML = tamGame.hunger += 1;
-     console.log(tamGame.hunger); }, 2000)
+    console.log(tamGame.hunger); }, 2500)
+  setInterval(() => {
+    document.getElementById("yawn").innerHTML = tamGame.tired += 1;
+    console.log(tamGame.tired); }, 2500)
 }
 
 
