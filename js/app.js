@@ -7,8 +7,8 @@ const tamGame = {
 
   onFeed() {
     console.log("num num");
-    tamGame.hunger = tamGame.hunger - 1;
     console.log(tamGame.hunger);
+    document.getElementById("growl").innerHTML = tamGame.hunger -= 1;
   },
   onSleep() {
     console.log("Zzz...");
@@ -29,20 +29,19 @@ function start() {
   head.appendChild(newDiv)
   const start = document.getElementById("init")
   start.remove()
-  // return tamagotchi
   const stats = document.getElementById("stats")
   let hungry = document.createElement("H2")
+  hungry.setAttribute("id", "growl")
   hungry.innerHTML = tamGame.hunger
   stats.appendChild(hungry)
 
 
 
 
-  document.getElementById("feed").addEventListener("click", tamGame.onFeed)
-  document.getElementById("play").addEventListener("click", tamGame.onPlay)
-  document.getElementById("sleep").addEventListener("click", tamGame.onSleep)
 
-  setInterval( function() { hungry.innerhtml = tamGame.hunger += 1; console.log(tamGame.hunger); }, 2000)
+  setInterval(() => {
+    document.getElementById("growl").innerHTML = tamGame.hunger += 1;
+     console.log(tamGame.hunger); }, 2000)
 }
 
 
@@ -114,3 +113,8 @@ function hatch3() {
 
 
 document.getElementById("init").addEventListener("click", selector)
+
+
+document.getElementById("feed").addEventListener("click", tamGame.onFeed)
+document.getElementById("play").addEventListener("click", tamGame.onPlay)
+document.getElementById("sleep").addEventListener("click", tamGame.onSleep)
