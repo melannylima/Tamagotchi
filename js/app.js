@@ -1,36 +1,36 @@
-console.log("Tamagotchi");
+console.log("Tamagotchi");  // Tesing connection
 
-const tamGame = {
+const tamGame = { // Object to define game's characteristics
 
   name: "",
   age: 0,
-  hunger: 0,
-  tired: 0,
-  bored: 0,
+  hunger: 1,
+  tired: 1,
+  bored: 1,
   type: 0,
 
-  onFeed() {
+  onFeed() { // function within tamGame function
     console.log("num num");
     // console.log(tamGame.hunger);
     document.getElementById("growl").innerHTML = tamGame.hunger -= 1;
   },
-  onSleep() {
+  onSleep() { // function within tamGame function
     console.log("Zzz...");
     document.getElementById("yawn").innerHTML = tamGame.tired -= 1;
     const sky = document.getElementById("main")
   sky.classList.toggle("night");
   },
-  onPlay() {
+  onPlay() { // function within tamGame function
     console.log("hehe");
     document.getElementById("whine").innerHTML = tamGame.bored -= 1;
   },
-  toHeaven() {
-    if (tamGame.hunger >= 10 || tamGame.tired >= 10 || tamGame.bored >= 10) {
+  toHeaven() { // function within tamGame function
+    if (tamGame.hunger >= 10 || tamGame.hunger <= 0 || tamGame.tired >= 10 || tamGame.tired <= 0 || tamGame.bored >= 10 || tamGame.bored <= 0) {
       heaven()
       alert(`${name} has gone to Heaven!`)
     }
   },
-  aging() {
+  aging() { // function within tamGame function
     if (tamGame.age == 5 && tamGame.type == 1) {
       age11()
       alert(`${name} is evolving!`)
@@ -54,7 +54,7 @@ const tamGame = {
 }
 
 
-function start() {
+function start() {  // Starting Game
   name = prompt("Name your Tamagotchi!", "name")
   tamGame.name = name
   const head = document.getElementById("head")
@@ -93,7 +93,7 @@ function start() {
 }
 
 
-function selector() {
+function selector() {  // Function to select egg to hatch
   start()
 
   const bod = document.getElementById("interactive")
@@ -111,6 +111,7 @@ function selector() {
   eggs.appendChild(egg1)
   eggs.appendChild(egg2)
   eggs.appendChild(egg3)
+  alert("Raise your Tamagotchi!\nFeed them, play with them, and put them to sleep!\nDon't let their levels reach 0 or 10!")
   alert("Choose an egg to hatch")
   bod.appendChild(eggs)
 
@@ -120,7 +121,7 @@ function selector() {
 
 }
 
-function hatch1() {
+function hatch1() { // 1st egg hatch
   const bod = document.getElementById("interactive")
   const eggs = document.getElementById("egg-buttons")
   eggs.remove()
@@ -132,7 +133,7 @@ function hatch1() {
   intervals()
 }
 
-function hatch2() {
+function hatch2() {  // 2nd egg hatch
   const bod = document.getElementById("interactive")
   const eggs = document.getElementById("egg-buttons")
   eggs.remove()
@@ -144,7 +145,7 @@ function hatch2() {
   intervals()
 }
 
-function hatch3() {
+function hatch3() { // third egg hatch
   const bod = document.getElementById("interactive")
   const eggs = document.getElementById("egg-buttons")
   eggs.remove()
@@ -157,7 +158,7 @@ function hatch3() {
 }
 
 
-function heaven() {
+function heaven() { // function to emulate death
   const tama = document.getElementById("dragon");
   const bod = document.getElementById("interactive");
   bod.innerHTML = '<img src="img/rip.png" />';
@@ -165,33 +166,33 @@ function heaven() {
   console.log("Game Over");
 }
 
-function age11() {
+function age11() { // 1st evolution of 1st Dragon
   const tama = document.getElementById("dragon");
   tama.innerHTML = '<img src="img/dragons_evo_1.png" />';
 }
-function age12() {
+function age12() { // 2nd evolution of 1st Dragon
   const tama = document.getElementById("dragon");
   tama.innerHTML = '<img src="img/dragons_evo_2.png" />';
 }
-function age21() {
+function age21() { // 1st evolution of 2nd Dragon
   const tama = document.getElementById("dragon");
   tama.innerHTML = '<img src="img/dragons2_evo_1.png" />';
 }
-function age22() {
+function age22() { // 2nd evolution of 2nd Dragon
   const tama = document.getElementById("dragon");
   tama.innerHTML = '<img src="img/dragons2_evo_2.png" />';
 }
-function age31() {
+function age31() { // 1st evolution of 3rd Dragon
   const tama = document.getElementById("dragon");
   tama.innerHTML = '<img src="img/dragons3_evo_1.png" />';
 }
-function age32() {
+function age32() { // 2nd evolution of 3rd Dragon
   const tama = document.getElementById("dragon");
   tama.innerHTML = '<img src="img/dragons3_evo_2.png" />';
 }
 
 
-function intervals() {
+function intervals() {  // Functions to run on set intervals
   setInterval(() => {
     document.getElementById("growl").innerHTML = tamGame.hunger += 1;
     console.log(tamGame.hunger); }, 2500)
@@ -206,14 +207,13 @@ function intervals() {
     console.log(tamGame.age); }, 4000)
   setInterval(() => {tamGame.toHeaven() }, 500)
   setInterval(() => {tamGame.aging() }, 3900)
-  // setInterval(() => {const dragon = document.getElementById("dragon"); dragon.classList.toggle("move")}, 4000)
 }
 
 
 
-document.getElementById("init").addEventListener("click", selector)
+document.getElementById("init").addEventListener("click", selector)  // Start button
 
 
-document.getElementById("feed").addEventListener("click", tamGame.onFeed)
-document.getElementById("play").addEventListener("click", tamGame.onPlay)
-document.getElementById("sleep").addEventListener("click", tamGame.onSleep)
+document.getElementById("feed").addEventListener("click", tamGame.onFeed) // Feed button
+document.getElementById("play").addEventListener("click", tamGame.onPlay) // Play button
+document.getElementById("sleep").addEventListener("click", tamGame.onSleep) // Sleep button
