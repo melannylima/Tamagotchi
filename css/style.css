@@ -21,9 +21,6 @@ body {
 }
 
 #eggs {
-  /* background: url(../img/egg1.png) no-repeat;
-  background: url(../img/egg2.png) no-repeat;
-  background: url(../img/egg3.png) no-repeat; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
