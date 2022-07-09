@@ -76,3 +76,8 @@ li {
 #interactive {
   height: 25vh;
 }
+
+button {
+  font-family: KanitItalic, sans-serif;
+  border: 0;
+}
