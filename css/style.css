@@ -20,6 +20,10 @@ body {
 
 }
 
+li {
+  list-style: none;
+}
+
 #eggs {
   display: flex;
   flex-direction: row;

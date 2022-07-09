@@ -29,11 +29,11 @@ function start() {
   head.appendChild(newDiv)
   const start = document.getElementById("init")
   start.remove()
-  const stats = document.getElementById("stats")
+  const stat1 = document.getElementById("hunger")
   let hungry = document.createElement("H2")
   hungry.setAttribute("id", "growl")
   hungry.innerHTML = tamGame.hunger
-  stats.appendChild(hungry)
+  stat1.appendChild(hungry)
 
 
 
